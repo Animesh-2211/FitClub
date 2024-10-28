@@ -1,0 +1,73 @@
+.testimonials-container {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--planCard);
+    color: aliceblue;
+    overflow: hidden; /* Ensure it doesn't go outside */
+  }
+  
+  .testimonials-header {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonials-wrapper {
+    overflow: hidden; /* Hide the scrollbar */
+  }
+  
+  .testimonials-slider {
+    display: flex;
+    gap: 1rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    animation: scroll 20s linear infinite; /* Auto scroll */
+    width: max-content;
+  }
+  
+  /* Scroll animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Hide scrollbar in WebKit browsers */
+  .testimonials-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .testimonial {
+    background-color: gray; /* Default background color */
+    padding: 2rem;
+    border-radius: 8px;
+    min-width: 300px; /* Larger size like review boxes */
+    height: 200px;
+    flex-shrink: 0; /* Prevents shrinking */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .testimonial:hover {
+    background-color: darkgray; /* Hover color */
+    transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  .testimonial.selected {
+    background-color: darkorange; /* When clicked */
+  }
+  
+  .testimonial h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial p {
+    font-size: 1rem;
+    font-style: italic;
+  }
+  
